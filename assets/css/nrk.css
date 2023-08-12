@@ -1,0 +1,218 @@
+
+    *,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #ffffff;
+  font-size: 0.9375em;
+}
+
+body {
+  color: #21292b;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+ol {
+  list-style: none;
+}
+
+* {
+  font-size: inherit;
+  font-weight: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+.nrk-sr,
+.nrk-sr-focus:not(:focus) {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+
+.max-min-temperature {
+  display: inline-flex;
+}
+
+.max-min-temperature__separator {
+  color: #56616c;
+  margin: 0 0.1333333333rem;
+}
+
+.max-min-wind {
+  display: inline-flex;
+}
+
+.max-min-wind__separator {
+  color: #56616c;
+  margin: 0 0.1333333333rem;
+}
+
+.notifications {
+  display: flex;
+  position: relative;
+  z-index: 0;
+}
+
+.notifications__notification {
+  width: 1.6rem;
+  height: 1.6rem;
+  filter: drop-shadow(1px 0 #ffffff);
+}
+
+.notifications__notification--stack:nth-child(n+2) {
+  margin-left: -0.9333333333rem;
+}
+.notifications__notification--stack:nth-child(1) {
+  z-index: 0;
+}
+.notifications__notification--stack:nth-child(2) {
+  z-index: -1;
+}
+.notifications__notification--stack:nth-child(3) {
+  z-index: -2;
+}
+
+.precipitation {
+  color: #006edb;
+}
+
+.temperature[data-is-warm=true] {
+  color: #c60000;
+}
+
+.temperature[data-is-warm=false] {
+  color: #006edb;
+}
+
+body {
+  padding: 1.0666666667rem;
+}
+
+.layout {
+  margin: 0 auto;
+  max-width: 66.6666666667rem;
+}
+
+.header {
+  margin-bottom: 0.5333333333rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__yr {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  color: #00b8f1;
+}
+.header__yr > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.header__attribution {
+  display: flex;
+  align-items: center;
+}
+
+.header__served-by {
+  white-space: nowrap;
+}
+@media screen and (max-width: 21.3333333333rem) {
+  .header__served-by {
+    display: none;
+  }
+}
+
+.header__attribution-logo-nrk {
+  margin-left: 0.8rem;
+  height: 0.9333333333rem;
+  width: auto;
+  position: relative;
+  top: 1px;
+}
+
+.header__attribution-logo-met {
+  margin-left: 0.8rem;
+  height: 1.4666666667rem;
+  width: auto;
+  position: relative;
+  top: 1px;
+}
+
+.location-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.0666666667rem;
+  letter-spacing: -0.01em;
+}
+
+.table-container {
+  overflow: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 40rem;
+}
+.table th[data-align=left],
+.table td[data-align=left] {
+  text-align: left;
+}
+.table th[data-align=center],
+.table td[data-align=center] {
+  text-align: center;
+}
+.table th[data-align=right],
+.table td[data-align=right] {
+  text-align: right;
+}
+
+.table__head th {
+  height: 2.1333333333rem;
+  color: #56616c;
+  font-size: 0.8666666667rem;
+  font-weight: 400;
+  line-height: 1.0666666667rem;
+}
+
+.table__body th {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3333333333rem;
+}
+.table__body th,
+.table__body td {
+  height: 3.1333333333rem;
+  border-top: 0.0666666667rem solid #c3d0d8;
+}
+
+.table__weather-symbol {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+  

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+    <div class="layout">
+      <div class="header">
+        <h1 class="header-title">
+          <a href="{{ site.baseurl }}">
+              {{ site.title }}
+          </a>
+        </h1>
+        <p class="header__attribution">
+          <span class="header__served-by">{{ site.tagline }}</span>
+        </p>
+      </div>
+
+      {{ content }}
+    </div>    
+  </body>
+</html>

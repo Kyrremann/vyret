@@ -1,0 +1,32 @@
+# Setup
+title: Vyret
+tagline: Når Vy ikke er nok
+url: https://kyrremann.no/vyret
+baseurl: ""
+permalink: pretty
+
+# Gems
+plugins:
+  - jekyll-gist
+  - jekyll-seo-tag
+
+# Optimize Jekyll
+exclude:
+  - .git
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Options
+
+# Specify the author for blog posts
+author:
+  name: Kyrre Havik
+  url: https://kyrremann.no
+  email: kyrremann@gmail.com

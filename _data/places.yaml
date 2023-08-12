@@ -1,0 +1,8 @@
+- name: Molladalen
+  url: https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/1-182946/Norge/M%C3%B8re%20og%20Romsdal/%C3%98rsta/Molladalen
+  lat: 62.31097
+  lon: 6.3158
+- name: Hægefjell
+  url: https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/1-41685/Norge/Vestfold%20og%20Telemark/Kviteseid/H%C3%A6gefjell
+  lat: 59.26584
+  lon: 8.40426
