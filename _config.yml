@@ -5,11 +5,6 @@ url: https://kyrremann.no/vyret
 baseurl: ""
 permalink: pretty
 
-# Gems
-plugins:
-  - jekyll-gist
-  - jekyll-seo-tag
-
 # Optimize Jekyll
 exclude:
   - .git
