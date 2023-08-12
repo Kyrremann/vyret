@@ -2,7 +2,6 @@
 title: Vyret
 tagline: Når Vy ikke strekker til
 url: https://kyrremann.no/vyret
-permalink: pretty
 baseurl: "/vyret"
 
 # Optimize Jekyll
@@ -13,15 +12,3 @@ exclude:
   - Gemfile.lock
   - LICENSE.md
   - README.md
-
-sass:
-  sass_dir: _sass
-  style: :compressed
-
-# Options
-
-# Specify the author for blog posts
-author:
-  name: Kyrre Havik
-  url: https://kyrremann.no
-  email: kyrremann@gmail.com
