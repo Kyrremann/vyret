@@ -2,8 +2,8 @@
 title: Vyret
 tagline: Når Vy ikke er nok
 url: https://kyrremann.no/vyret
-baseurl: ""
 permalink: pretty
+baseurl: "/vyret"
 
 # Optimize Jekyll
 exclude:
