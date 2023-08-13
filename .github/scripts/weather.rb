@@ -20,7 +20,7 @@ def normalize(name)
   I18n.transliterate(name.downcase)
 end
 
-places = YAML.load_file('../../_data/places.yaml')
+places = YAML.load_file('_data/places.yaml')
 
 places.each do |place|
   p "Getting data for #{place['name']}"
@@ -28,7 +28,7 @@ places.each do |place|
   table = parse(place, doc)
 
   filename = normalize(place['name'])
-  File.open('../../_includes/' + filename + '.html', 'w') do |file|
+  File.open('_includes/' + filename + '.html', 'w') do |file|
     file.puts table.to_html(save_with: Nokogiri::XML::Node::SaveOptions::AS_HTML)
   end
 end
