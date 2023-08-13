@@ -1,0 +1,29 @@
+name: Update weather
+
+on:
+  schedule:
+    - cron:  '0, 6,12,16,20 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/update.yaml'
+      - '.github/scripts/*'
+      - '_data/places.yaml'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@250fcd6a742febb1123a77a841497ccaa8b9e939 # v1.152.0
+        with:
+          bundler-cache: true
+      - name: Run updated
+        run: bundle exec ruby .github/scripts/weather.rb
+      - name: Save weather forecast
+        run: |
+          git config --global user.name "$GITHUB_ACTOR"
+          git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git commit -am "ci: Retrieved the latest forecasts"
+          git push
