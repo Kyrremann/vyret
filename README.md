@@ -20,4 +20,4 @@ Then extract the ID (in the example above it is `1-65213`) from the URL and add 
 
 ## Credits
 
-Weather symbols from [nrkno.github.io](https://nrkno.github.io/yr-weather-symbols/).
+Weather symbols from [metno/weathericons](https://github.com/metno/weathericons), and alerts from [nrkno/yr-warning-icons](https://github.com/nrkno/yr-warning-icons).
