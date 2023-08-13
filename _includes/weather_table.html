@@ -1,0 +1,58 @@
+<h2 class="location-name">
+  <a href="https://yr.no/nb/værvarsel/daglig-tabell/{{ place.id }}">{{ place.name }}</a>
+</h2>
+<div class="table-container">
+  <table class="table">
+    <caption class="nrk-sr">Værvarsel for neste 8 dager</caption>
+    <thead class="table__head">
+      <tr>
+        <th data-align="left"><span class="nrk-sr">Dato</span></th>
+        <th data-align="left"><span class="nrk-sr">Farevarsel</span></th>
+        <th data-align="center">00–12</th>
+        <th data-align="center">12–00</th>
+        <th data-align="right">
+          <abbr title="Maksimum/minimum temperatur">Maks/min. temp.</abbr>
+        </th>
+        <th data-align="right">Nedbør</th>
+        <th data-align="right">Maks/min.
+          vind m/s
+        </th>
+      </tr>
+    </thead>
+    <tbody class="table__body">
+      {% for day in place.dates %}
+      <tr>
+        <th data-align="left">{{ day.date }}</th>
+        <td data-align="left">
+          <div class="notifications"></div>
+        </td>
+        <td data-align="center">
+          {% if day.weather_symbol_00.src %}
+          <img class="table__weather-symbol" src="{{ site.baseurl }}/assets/img/{{ day.weather_symbol_00.src }}" alt="{{ day.weather_symbol_00.alt }}">
+          {% endif %}
+        </td>
+        <td data-align="center">
+          {% if day.weather_symbol_12.src %}
+          <img class="table__weather-symbol" src="{{ site.baseurl }}/assets/img/{{ day.weather_symbol_12.src }}" alt="{{ day.weather_symbol_12.alt }}">
+          {% endif %}
+        </td>
+        <td data-align="right">
+          <span class="max-min-temperature">
+            <span class="temperature" data-is-warm="true">{{ day.temp }}</span>
+          </span>
+        </td>
+        <td data-align="right">
+          {% if day.rain %}
+          <span class="precipitation">{{ day.rain }}</span>
+          {% endif %}
+        </td>
+        <td data-align="right">
+          <span class="max-min-wind">
+            <span class="max-min-wind__value">{{ day.wind }}</span>
+          </span>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
