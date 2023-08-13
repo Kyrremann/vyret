@@ -3,7 +3,8 @@ layout: yr
 title: Home
 ---
 
-{% for place in site.data.places %}
+{% assign places = site.data.places | sort: "name" %}
+{% for place in places %}
 <h1 class="location-name">{{ place.name }}</h1>
 {% include molladalen.html %}
 {% endfor %}
