@@ -3,7 +3,7 @@ layout: yr
 title: Home
 ---
 
-{% for place in site.data.weather %}
+{% for place in site.data.weather.weather %}
 {% include weather_table.html %}
 {% endfor %}
 

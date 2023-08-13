@@ -1,3 +1,4 @@
+require 'date'
 require 'i18n'
 require 'json'
 require 'nokogiri'
@@ -62,6 +63,6 @@ places.each do |place|
   weather << { name: place['name'], id: place['id'], dates: dates }
 
   File.open('_data/weather.json', 'w') do |file|
-    file.puts(weather.to_json)
+    file.puts({updated_at: DateTime.now, weather: weather }.to_json)
   end
 end
