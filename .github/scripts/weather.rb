@@ -17,7 +17,7 @@ def parse(place, doc)
 end
 
 def normalize(name)
-  I18n.transliterate(name.downcase)
+  I18n.transliterate(name.downcase).gsub(' ', '-')
 end
 
 places = YAML.load_file('_data/places.yaml')
