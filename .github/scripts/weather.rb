@@ -8,7 +8,7 @@ def parse(place, doc)
   table = doc.at_css('.table-container')
   imgs = table.xpath('//img')
   imgs.each do |img|
-    img['src'] = 'assets/img/' + img['src'].split('/').last
+    img['src'] = 'assets/img/' + img['src'].split('/').last.sub('png', 'svg')
   end
 
   table.traverse { |node| node.remove if node.text? && node.text !~ /\S/ }
