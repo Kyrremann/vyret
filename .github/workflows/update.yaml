@@ -10,6 +10,9 @@ on:
       - '.github/scripts/*'
       - '_data/places.yaml'
 
+env:
+  TZ: "Europe/Oslo"
+
 jobs:
   update:
     runs-on: ubuntu-latest
