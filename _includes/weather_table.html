@@ -38,7 +38,9 @@
         </td>
         <td data-align="right">
           <span class="max-min-temperature">
-            <span class="temperature" data-is-warm="true">{{ day.temp }}</span>
+            <span class="temperature" data-is-warm="{{ day.temp.max.is_warm }}">{{ day.temp.max.temp }}</span>
+            <span class="max-min-temperature__separator">/</span>
+            <span class="temperature" data-is-warm="{{ day.temp.min.is_warm }}">{{ day.temp.min.temp }}</span>
           </span>
         </td>
         <td data-align="right">
