@@ -215,4 +215,7 @@ body {
   height: 1.6rem;
 }
 
-  
+tr:hover {
+  background-color: #eef6f8;
+  color: #000000;
+}
