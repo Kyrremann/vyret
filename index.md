@@ -2,6 +2,7 @@
 layout: yr
 ---
 
-{% for place in site.data.weather.weather %}
+{% assign places = site.data.weather.weather | sort: 'name' %}
+{% for place in places %}
 {% include weather_table.html %}
 {% endfor %}
