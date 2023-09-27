@@ -6,7 +6,6 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '.github/workflows/update.yaml'
       - '.github/scripts/*'
       - '_data/places.yaml'
 
