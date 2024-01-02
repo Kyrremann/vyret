@@ -9,8 +9,8 @@ I18n.available_locales = [:en]
 
 class Temp
   def initialize(tag)
-    self.max(tag[0])
-    self.min(tag[1])
+    max(tag[0])
+    min(tag[1])
   end
 
   def max(tag)
@@ -23,8 +23,8 @@ class Temp
     @min_warm = tag.attr('data-is-warm')
   end
 
-  def to_json(state)
-    {max: {temp: @max, is_warm: @max_warm}, min: {temp: @min, is_warm: @min_warm}}.to_json
+  def to_json(_state)
+    { max: { temp: @max, is_warm: @max_warm }, min: { temp: @min, is_warm: @min_warm } }.to_json
   end
 end
 
@@ -41,11 +41,12 @@ class Row
 
   def self.get_img_src(td)
     img = td.at('img')
-    return "" unless img
+    return '' unless img
+
     { src: img['src'].split('/').last.sub('png', 'svg'), alt: img['alt'] }
   end
 
-  def to_json(state)
+  def to_json(_state)
     {
       date: @date,
       notifications: @notifications,
@@ -82,9 +83,9 @@ places.each do |place|
   doc.traverse { |node| node.remove if node.text? && node.text !~ /\S/ }
 
   dates = parse_doc(doc)
-  weather << { name: place['name'], id: place['id'], dates: dates }
+  weather << { name: place['name'], id: place['id'], dates: }
 
   File.open('_data/weather.json', 'w') do |file|
-    file.puts({updated_at: DateTime.now, weather: weather }.to_json)
+    file.puts({ updated_at: DateTime.now, weather: }.to_json)
   end
 end
