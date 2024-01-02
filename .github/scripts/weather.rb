@@ -3,6 +3,7 @@ require 'i18n'
 require 'json'
 require 'nokogiri'
 require 'yaml'
+require 'open-uri'
 
 I18n.available_locales = [:en]
 
@@ -77,7 +78,7 @@ weather = []
 places.each do |place|
   p "Getting data for #{place['name']}"
 
-  doc = Nokogiri::HTML5.get("https://www.yr.no/nb/innhold/#{place['id']}/table.html")
+  doc = Nokogiri::HTML5.parse(URI.open("https://www.yr.no/nb/innhold/#{place['id']}/table.html"))
   doc.traverse { |node| node.remove if node.text? && node.text !~ /\S/ }
 
   dates = parse_doc(doc)
