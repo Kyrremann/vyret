@@ -25,7 +25,7 @@ jobs:
         run: bundle exec ruby .github/scripts/weather.rb
       - name: Save weather forecast
         run: |
-          git config --global user.name "$GITHUB_ACTOR"
-          git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -am "ci: Retrieved the latest forecasts"
           git push
