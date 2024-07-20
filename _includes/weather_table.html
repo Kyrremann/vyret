@@ -8,15 +8,13 @@
       <tr>
         <th data-align="left"><span class="nrk-sr">Dato</span></th>
         <th data-align="left"><span class="nrk-sr">Farevarsel</span></th>
-        <th data-align="center">00–12</th>
-        <th data-align="center">12–00</th>
-        <th data-align="right">
-          <abbr title="Maksimum/minimum temperatur">Maks/min. temp.</abbr>
-        </th>
+        <th data-align="center">Natt</th>
+        <th data-align="center">Morgen</th>
+		<th data-align="center">Dag</th>
+		<th data-align="center">Kveld</th>
+        <th data-align="right">Temperatur høy/lav</th>
         <th data-align="right">Nedbør</th>
-        <th data-align="right">Maks/min.
-          vind m/s
-        </th>
+        <th data-align="right">Vind</th>
       </tr>
     </thead>
     <tbody class="table__body">
@@ -32,25 +30,35 @@
           {% endif %}
         </td>
         <td data-align="center">
+          {% if day.weather_symbol_06.src %}
+          <img class="table__weather-symbol" src="{{ site.baseurl }}/assets/img/{{ day.weather_symbol_06.src }}" alt="{{ day.weather_symbol_06.alt }}">
+          {% endif %}
+        </td>
+        <td data-align="center">
           {% if day.weather_symbol_12.src %}
           <img class="table__weather-symbol" src="{{ site.baseurl }}/assets/img/{{ day.weather_symbol_12.src }}" alt="{{ day.weather_symbol_12.alt }}">
           {% endif %}
         </td>
+        <td data-align="center">
+          {% if day.weather_symbol_18.src %}
+          <img class="table__weather-symbol" src="{{ site.baseurl }}/assets/img/{{ day.weather_symbol_18.src }}" alt="{{ day.weather_symbol_18.alt }}">
+          {% endif %}
+        </td>
         <td data-align="right">
           <span class="max-min-temperature">
-            <span class="temperature" data-is-warm="{{ day.temp.max.is_warm }}">{{ day.temp.max.temp }}</span>
+            <span class="temperature" data-is-warm="{{ day.temp.max.is_warm }}">{{ day.temp.max.temp }}°</span>
             <span class="max-min-temperature__separator">/</span>
-            <span class="temperature" data-is-warm="{{ day.temp.min.is_warm }}">{{ day.temp.min.temp }}</span>
+            <span class="temperature" data-is-warm="{{ day.temp.min.is_warm }}">{{ day.temp.min.temp }}°</span>
           </span>
         </td>
         <td data-align="right">
-          {% if day.rain %}
-          <span class="precipitation">{{ day.rain }}</span>
+          {% if day.rain > "0" %}
+          <span class="precipitation">{{ day.rain }} mm</span>
           {% endif %}
         </td>
         <td data-align="right">
           <span class="max-min-wind">
-            <span class="max-min-wind__value">{{ day.wind }}</span>
+            <span class="max-min-wind__value">{{ day.wind }} m/s</span>
           </span>
         </td>
       </tr>
