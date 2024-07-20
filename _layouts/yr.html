@@ -6,11 +6,14 @@
   <body>
     <div class="layout">
       <div class="header">
-        <h1 class="header-title">
+        <div class="header__attribution">
+		  <img class="table__weather-symbol" src="{{ 'assets/icons8-alpine-96.png' | relative_url }}" alt="A pointy mountain with snow on top">
+		  <h1 class="header-title">
           <a href="{{ site.baseurl }}/">
               {{ site.title }}
           </a>
-        </h1>
+		  </h1>
+		</div>
         <p class="header__attribution">
           <span class="header__served-by">Sist oppdatert: {{ site.data.weather.updated_at | date: '%d/%m/%Y %H:%M' }}</span>
         </p>
