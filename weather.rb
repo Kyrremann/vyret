@@ -34,11 +34,10 @@ class Row
   def initialize(tr)
     @date = tr.search('time').children[0].content
     @notifications = Row.get_img_src(tr.at('warning-icon-image'))
-    weather_img = tr.css('.weather-symbol__img')
-    @weather_symbol_00 = Row.get_img_src(weather_img[0])
-    @weather_symbol_06 = Row.get_img_src(weather_img[1])
-    @weather_symbol_12 = Row.get_img_src(weather_img[2])
-    @weather_symbol_18 = Row.get_img_src(weather_img[3])
+    @weather_symbol_00 = Row.get_img_src(tr.at('.daily-weather-list-item__symbol-0').at('.weather-symbol__img'))
+    @weather_symbol_06 = Row.get_img_src(tr.at('.daily-weather-list-item__symbol-1').at('.weather-symbol__img'))
+    @weather_symbol_12 = Row.get_img_src(tr.at('.daily-weather-list-item__symbol-2').at('.weather-symbol__img'))
+    @weather_symbol_18 = Row.get_img_src(tr.at('.daily-weather-list-item__symbol-3').at('.weather-symbol__img'))
     @temp = Temp.new(tr.css('.daily-weather-list-item__temperature'))
     @rain = tr.css('.daily-weather-list-item__precipitation').children[0].children[0].children[1].content
     @wind = tr.css('.wind__value').children[0].content
