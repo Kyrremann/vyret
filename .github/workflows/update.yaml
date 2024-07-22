@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '.github/scripts/*'
+      - 'weather.rb'
       - '_data/places.yaml'
 
 env:
@@ -22,7 +22,7 @@ jobs:
         with:
           bundler-cache: true
       - name: Run updated
-        run: bundle exec ruby .github/scripts/weather.rb
+        run: bundle exec ruby weather.rb
       - name: Save weather forecast
         run: |
           git config --global user.name "github-actions[bot]"
