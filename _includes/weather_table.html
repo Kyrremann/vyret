@@ -22,7 +22,11 @@
       <tr>
         <th data-align="left">{{ day.date }}</th>
         <td data-align="left">
-          <div class="notifications"></div>
+          <div class="notifications">
+			{% for notification in day.notifications %}
+			<img class="table__weather-symbol" src="{{ site.baseurl }}/assets/img/{{ notification.src }}" alt="{{ notification.alt }}">
+			{% endfor %}
+		  </div>
         </td>
         <td data-align="center">
           {% if day.weather_symbol_00.src %}

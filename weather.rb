@@ -33,7 +33,13 @@ end
 class Row
   def initialize(tr)
     @date = tr.search('time').children[0].content
-    @notifications = Row.get_img_src(tr.at('warning-icon-image'))
+    @notifications = []
+    desktop_warnings = tr.css('.daily-weather-list-item__warnings-desktop') # ('.warning-icon-image') # search('.warnings-icon-group__icon')
+    if desktop_warnings.any?
+      desktop_warnings.css('.warning-icon-image').each do |node|
+        @notifications << Row.get_img_src(node)
+      end
+    end
     @weather_symbol_00 = Row.get_img_src(tr.at('.daily-weather-list-item__symbol-0').at('.weather-symbol__img'))
     @weather_symbol_06 = Row.get_img_src(tr.at('.daily-weather-list-item__symbol-1').at('.weather-symbol__img'))
     @weather_symbol_12 = Row.get_img_src(tr.at('.daily-weather-list-item__symbol-2').at('.weather-symbol__img'))
