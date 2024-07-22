@@ -32,7 +32,7 @@ end
 
 class Row
   def initialize(tr)
-    @date = tr.children[0].content
+    @date = tr.search('time').children[0].content
     @notifications = Row.get_img_src(tr.at('warning-icon-image'))
     weather_img = tr.css('.weather-symbol__img')
     @weather_symbol_00 = Row.get_img_src(weather_img[0])
