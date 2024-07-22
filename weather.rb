@@ -65,20 +65,6 @@ class Row
   end
 end
 
-def parse_doc(doc)
-  trs = doc.xpath('//tbody//tr')
-  rows = []
-  trs.each do |tr|
-    rows << Row.new(tr)
-  end
-
-  rows
-end
-
-def normalize(name)
-  I18n.transliterate(name.downcase).gsub(' ', '-')
-end
-
 places = YAML.load_file('_data/places.yaml')
 weather = []
 
