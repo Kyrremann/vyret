@@ -20,6 +20,12 @@
       </div>
       {{ content }}
       <a target="_blank" href="https://icons8.com/icon/6vvNkta8tr68/alps">alpine</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+	  {%-if site.goat_counter and jekyll.environment == "production"-%}
+	  <script data-goatcounter="https://{{ site.goat_counter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+	  <noscript>
+		<img src="https://{{ site.goat_counter }}.goatcounter.com/count?p=/test-img">
+	  </noscript>
+      {%-endif-%}
     </div>    
   </body>
 </html>

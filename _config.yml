@@ -4,6 +4,8 @@ tagline: Når Vy ikke strekker til
 url: https://kyrremann.no/vyret
 baseurl: "/vyret"
 
+goat_counter: kyrremann
+
 # Optimize Jekyll
 exclude:
   - .git
