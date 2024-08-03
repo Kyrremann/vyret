@@ -74,10 +74,18 @@ places = YAML.load_file('_data/places.yaml')
 weather = []
 
 places.each do |place|
+  retries = 5
   p "Getting data for #{place['name']}"
 
   uri = "https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/#{place['id']}"
-  doc = Nokogiri::HTML5.parse(URI.open(uri))
+  begin
+    site = URI.open(uri)
+  rescue RuntimeError => e
+    p "Error: #{e}"
+    retry if (retries -= 1) > 0
+  end
+
+  doc = Nokogiri::HTML5.parse(site)
 
   dates = []
   doc.search('.daily-weather-list-item').each do |node|
