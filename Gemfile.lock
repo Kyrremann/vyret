@@ -76,7 +76,7 @@ GEM
     regexp_parser (2.9.2)
     rexml (3.3.7)
     rouge (4.4.0)
-    rubocop (1.66.1)
+    rubocop (1.67.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -108,7 +108,7 @@ DEPENDENCIES
   jekyll (~> 4.3.4)
   jekyll-feed (~> 0.12)
   nokogiri (~> 1.16)
-  rubocop (~> 1.66)
+  rubocop (~> 1.67)
 
 BUNDLED WITH
    2.4.18
