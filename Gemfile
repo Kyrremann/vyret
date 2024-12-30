@@ -10,7 +10,7 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
 end
 
-gem "nokogiri", "~> 1.17"
+gem "nokogiri", "~> 1.18"
 
 gem "i18n", "~> 1.14"
 
