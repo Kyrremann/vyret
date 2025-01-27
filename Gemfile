@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.4"
+gem "jekyll", "~> 4.4.0"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -14,4 +14,4 @@ gem "nokogiri", "~> 1.18"
 
 gem "i18n", "~> 1.14"
 
-gem "rubocop", "~> 1.70", :group => :development
+gem "rubocop", "~> 1.71", :group => :development
