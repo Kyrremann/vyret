@@ -14,4 +14,4 @@ gem "nokogiri", "~> 1.18"
 
 gem "i18n", "~> 1.14"
 
-gem "rubocop", "~> 1.72", :group => :development
+gem "rubocop", "~> 1.73", :group => :development
