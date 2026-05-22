@@ -64,10 +64,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
     mercenary (0.4.0)
-    nokogiri (1.19.3-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.19.3-x86_64-linux-gnu)
-      racc (~> 1.4)
     parallel (2.0.1)
     parser (3.3.11.1)
       ast (~> 2.4.1)
@@ -119,7 +115,6 @@ DEPENDENCIES
   i18n (~> 1.14)
   jekyll (~> 4.4.1)
   jekyll-feed (~> 0.12)
-  nokogiri (~> 1.19)
   rubocop (~> 1.86)
 
 BUNDLED WITH
