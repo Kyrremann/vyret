@@ -65,6 +65,14 @@ end
 places = YAML.load_file('_data/places.yaml')
 weather = []
 
+existing_weather = {}
+if File.exist?('_data/weather.json')
+  existing = JSON.parse(File.read('_data/weather.json'))
+  existing['weather']&.each do |place|
+    existing_weather[place['id']] = place
+  end
+end
+
 places.each do |place|
   p "Getting data for #{place['name']}"
 
@@ -99,7 +107,13 @@ places.each do |place|
     }
   end
 
-  weather << { name: place['name'], id: place['id'], dates: dates }
+  # Build rolling history: old history + previous "I dag" (first entry of last run), keep 5
+  old_place = existing_weather[place['id']]
+  old_history = old_place ? (old_place['history'] || []) : []
+  old_today = old_place ? Array(old_place['dates']).first : nil
+  history = (old_history + [old_today].compact).last(5)
+
+  weather << { name: place['name'], id: place['id'], history: history, dates: dates }
 
   File.open('_data/weather.json', 'w') do |file|
     file.puts({ updated_at: DateTime.now, weather: weather }.to_json)

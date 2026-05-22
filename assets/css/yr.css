@@ -219,3 +219,46 @@ tr:hover {
   background-color: #eef6f8;
   color: #000000;
 }
+
+.history {
+  margin-bottom: 0.2rem;
+}
+
+.history__summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  list-style: none;
+  padding: 0.4rem 0.2rem;
+  color: #56616c;
+  font-size: 0.8666666667rem;
+  border-bottom: 0.0666666667rem solid #c3d0d8;
+  user-select: none;
+}
+
+.history__summary::-webkit-details-marker {
+  display: none;
+}
+
+.history__summary::before {
+  content: "▶";
+  font-size: 0.6rem;
+  transition: transform 0.15s;
+}
+
+details[open] .history__summary::before {
+  transform: rotate(90deg);
+}
+
+.history__rain {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.history__rain-symbol {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: inline-block;
+}
