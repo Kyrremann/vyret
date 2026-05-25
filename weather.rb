@@ -44,9 +44,17 @@ end
 
 def warnings_for_day(warnings, day_date)
   warnings.filter_map do |w|
-    meta = w['meta']
-    onset = Date.parse(meta['onset'])
-    expires = Date.parse(meta['expires'])
+    meta = w['meta'] || {}
+    onset_raw = meta['onset']
+    expires_raw = meta['expires']
+    next unless onset_raw && expires_raw
+
+    begin
+      onset = Date.parse(onset_raw)
+      expires = Date.parse(expires_raw)
+    rescue Date::Error
+      next
+    end
 
     next unless day_date >= onset && day_date < expires
 
@@ -54,7 +62,10 @@ def warnings_for_day(warnings, day_date)
     icon_severity = SEVERITY_MAP[severity]
     next unless icon_severity
 
-    event_type = event_type_to_icon_name(meta['eventType'])
+    event_type_raw = meta['eventType']
+    next unless event_type_raw
+
+    event_type = event_type_to_icon_name(event_type_raw)
     src = "icon-warning-#{event_type}-#{icon_severity}.svg"
     alt = meta['shortTitle'] || event_type
 
