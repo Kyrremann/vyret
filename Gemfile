@@ -12,4 +12,4 @@ end
 
 gem "i18n", "~> 1.14"
 
-gem "rubocop", "~> 1.86", :group => :development
+gem "rubocop", "~> 1.87", :group => :development
