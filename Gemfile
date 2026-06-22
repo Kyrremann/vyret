@@ -10,6 +10,6 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
 end
 
-gem "i18n", "~> 1.14"
+gem "i18n", "~> 1.15"
 
-gem "rubocop", "~> 1.87", :group => :development
+gem "rubocop", "~> 1.88", :group => :development
