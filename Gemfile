@@ -7,7 +7,7 @@ gem "jekyll", "~> 4.4.1"
 # gem "github-pages", "~> 228", group: :jekyll_plugins
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed", "~> 0.18"
 end
 
 gem "i18n", "~> 1.15"
